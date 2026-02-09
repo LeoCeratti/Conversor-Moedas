@@ -6,18 +6,16 @@ export default function Usd() {
     const [valorUsd, setValorUsd] = useState<number>(0);
 
     useEffect(() => {
-        async function carregar() {
-            console.log("Tentando carregar dados..."); // Ver no terminal
+        async function carregar() {           
             try {
-                const valor = await getUsd();
-                console.log("Valor recebido:", valor); // Ver no terminal
+                const valor = await getUsd();               
                 setValorUsd(valor);
             } catch (error: any) {
                 console.log("ERRO NA REQUISIÇÃO:", error.message);
                 if (error.response) {
                     console.log("STATUS DO ERRO:", error.response.status);
                 }
-            }
+            } 
         }
         carregar();
     }, []);
