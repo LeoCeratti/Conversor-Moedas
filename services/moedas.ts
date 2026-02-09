@@ -9,12 +9,20 @@ export async function getUsd() {
     }
 }
 
-// export async function getEur() {
-//   const response = await api.get("/last/EUR-BRL");
-//   return Number(response.data.EURBRL.bid);
-// }
+export async function getEur() {
+    try {
+        const response = await api.get("/last/EUR-BRL");
+        return Number(response.data.EURBRL.bid);
+    } catch (error) {
+        throw error;
+    }
+}
 
-// export async function getBtc() {
-//   const response = await api.get("/last/BTC-BRL");
-//   return Number(response.data.BTCBRL.bid);
-// }
+export async function getBtc() {
+    try {
+        const response = await api.get("/last/BTC-BRL");
+        return Number(response.data.BTCBRL.bid);
+    } catch (error) {
+        throw error;
+    }
+}

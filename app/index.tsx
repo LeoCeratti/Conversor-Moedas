@@ -1,34 +1,39 @@
-import { StyleSheet,Text,View,TouchableOpacity, Button } from "react-native";
+import { StyleSheet,Text,TextInput,View,TouchableOpacity, Button } from "react-native";
 import { useRouter } from "expo-router";
-
 
 export default function Home(){
 
     const router = useRouter();
 
     return(
-        <View style={styles.container}>
+        <View style={s.container}>
 
-                <Button
-
-                    title='Ir para USD/BRL'
-                    onPress={() => 
+                <TouchableOpacity
+                    onPress={()=>
                         router.push("/usd")
-                    }
-                
-                />
-                <Button
-                    title='Ir para EUR/BRL'
+                        }
+                    style={s.btnUsd}
+                        >
+                    <Text>Ir para USD/BRL</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
                     onPress={() => 
                         router.push("/eur")
                     }
-                />
-                <Button
-                    title='Ir para BTC/BRL'
+                >
+                    <Text>Ir para EUR/BRL</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
                     onPress={() => 
                         router.push("/btc")
                     }
-                />
+                    >
+                    <View>Ir para BTC/BRL</View>    
+                </TouchableOpacity>
+
+               
             
         </View>
     )
@@ -36,11 +41,14 @@ export default function Home(){
 
 }
 
-const styles = StyleSheet.create({
+const s = StyleSheet.create({
 container:{
     flex:1,
     justifyContent:'center',
     alignItems:'center'
 },
-
+btnUsd: {
+    backgroundColor: '#333'
+}
+    
 })

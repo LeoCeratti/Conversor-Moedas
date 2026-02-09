@@ -8,7 +8,7 @@ export default function Layout(){
             <Drawer>
                 
                 <Drawer.Screen 
-                name ='home'
+                name ='index'
                 options={{
                     title:'Conversor de Moedas',
                     drawerLabel: "Home",
